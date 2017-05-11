@@ -6,11 +6,11 @@
 1. g++
 
 ## Usage
-Running the parse.py on a .cpp file will cause it to generate an .s file with encoded data for any `COMPILE_IN_DATA_FILE` encountered.
+Running the parse.py on a .cpp file will cause it to generate an .s file with encoded data for any `COMPILE_IN_DATA_FILE` macro encountered.
 
 ## Example
 ```
-> python3 parse.py temp.s
+> python3 parse.py source.cpp temp.s
 > g++ temp.s source.cpp -o O
 > rm temp.s
 > ./O
