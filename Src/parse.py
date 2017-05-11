@@ -49,7 +49,7 @@ if len(sys.argv) != 3:
 cpp_src = sys.argv[1]
 asm_target = sys.argv[2]
 
-MACRO_REG=r'COMPILE_IN_DATA_FILE\((.*),\"(.*)\"\);'
+MACRO_REG=r'^COMPILE_IN_DATA_FILE\((.*),\"(.*)\"\);$'
 
 matches = [re.findall(MACRO_REG, line.replace(' ', '')) for line in open(cpp_src)]
 

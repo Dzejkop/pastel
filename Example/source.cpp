@@ -5,8 +5,8 @@
 #endif
 
 COMPILE_IN_DATA_FILE(data, "the_raven.txt");
-COMPILE_IN_DATA_FILE(test_data, "test_data.txt");
-COMPILE_IN_DATA_FILE(bird_file, "bird.jpg");
+//COMPILE_IN_DATA_FILE(test_data, "test_data.txt");
+//COMPILE_IN_DATA_FILE(bird_file, "bird.jpg");
 
 int main()
 {
