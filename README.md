@@ -33,7 +33,7 @@ Be warned it's: **only tested on Linux**
 1. Compile the original and generated files together.
 1. Preferably remove the generated files.
 
-## Exmplae usage (in the Example directory)
+## Example usage (in the Example directory)
 ```
 > python3 ../Src/parse.py source.cpp temp.s
 > g++ temp.s source.cpp -o O
