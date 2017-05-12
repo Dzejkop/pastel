@@ -13,7 +13,7 @@ My 3 main goals are for `PaSTeL` to be:
 - [x] Staic linking of files on Linux
 - [x] Platform independent linking (**untested on OSX**)
 - [x] Command line arguments
-- [ ] Support for multiple source files
+- [x] Support for multiple source files
 - [ ] Extensible configuration
 - [ ] Easy integration into Makefile
 - [ ] Easy integration into CMake
@@ -23,7 +23,7 @@ My 3 main goals are for `PaSTeL` to be:
 
 ## Usage
 Basic:
-`python <path_to_pastel.py> -s <src_file> -t target_file`
+`python <path_to_pastel.py> -s <src_file_1> -s <src_file_2> -t target_file`
 
 Additional options:
 
@@ -31,46 +31,5 @@ Additional options:
 
 * `--generate_header` generates the pastel.h
 
-## Example
-**Project structure**
-```
-dir:
-    source.cpp
-    test_data.txt
-    pastel.py
-```
-
-**source.cpp**
-```cpp
-#include <iostream>
-
-// Necessary for macro and DataBundle structure definition
-// Can be generated using the --generate_header option
-#include "pastel.h"
-
-COMPILE_IN_DATA_FILE(test_data, "test_data.txt");
-
-int main()
-{
-  std::cout << test_data.data;
-  return 0;
-}
-```
-
-**test_data.txt**
-```
-Hello World!
-```
-
-**Commands**
-```
-> python pastel.py -s source.cpp -t data.cpp --generate_header
-> g++ source.cpp data.cpp -o O
-> rm data.cpp
-> ./O
-```
-
-**Program output**
-```
-Hello World!
-```
+## Examples
+* [Makefile 1](/example)

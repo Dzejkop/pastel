@@ -5,7 +5,7 @@ app: source.cpp test.cpp data.cpp pastel.h
 	rm pastel.py
 
 data.cpp: pastel.h pastel.py
-	python3 pastel.py -s source.cpp -s test.cpp -t data.cpp --generate_header -v
+	python3 pastel.py -s source.cpp -s test.cpp -t data.cpp --generate_header
 
 pastel.h: pastel.py
 	python3 pastel.py --generate_header
