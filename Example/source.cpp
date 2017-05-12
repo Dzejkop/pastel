@@ -1,16 +1,13 @@
 #include <iostream>
 
-#ifndef COMPILE_IN_DATA_FILE
-#define COMPILE_IN_DATA_FILE(name, path) extern unsigned char name[]
-#endif
+// Necessary for macro and DataBundle structure definition
+// Can be generated using the --generate_header option
+#include "pastel.h"
 
-COMPILE_IN_DATA_FILE(data, "the_raven.txt");
-//COMPILE_IN_DATA_FILE(test_data, "test_data.txt");
-//COMPILE_IN_DATA_FILE(bird_file, "bird.jpg");
+COMPILE_IN_DATA_FILE(test_data, "test_data.txt");
 
 int main()
 {
-  std::cout << test_data;
-
+  std::cout << test_data.data;
   return 0;
 }
