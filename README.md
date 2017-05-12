@@ -10,13 +10,15 @@ My 3 main goals are for `PaSTeL` to be:
 * Easy to integrate into your build system
 
 ## Features
-- [x] Staic linking of files on Linux
+- [x] Static linking of files on Linux
 - [x] Platform independent linking (**untested on OSX**)
 - [x] Command line arguments
 - [x] Support for multiple source files
 - [ ] Extensible configuration
-- [ ] Easy integration into Makefile
+- [x] Easy integration into Makefile
 - [ ] Easy integration into CMake
+- [ ] Easy integration with Visual Studio
+- [ ] Namespaces support
 
 ## Requirements
 1. Python3
@@ -27,7 +29,7 @@ Basic:
 
 Additional options:
 
-* `-v` verbose
+* `--verbose` verbose
 
 * `--generate_header` generates the pastel.h
 

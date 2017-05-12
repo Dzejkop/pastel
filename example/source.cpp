@@ -6,7 +6,10 @@
 
 #include "test.h"
 
-PASTEL_COMPILE(test_data, "test_data.txt");
+PASTEL_COMPILE(test_data, "test_data.txt"); // This comment will not interfere with parsing
+
+// This macro will not be parsed
+// PASTEL_COMPILE(derp_data, "derp_data.txt");
 
 int main()
 {
