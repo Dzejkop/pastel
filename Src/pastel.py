@@ -57,7 +57,7 @@ def opt_parse(options, arguments):
         if opt[0] == '-t':
             if opt[1] != '':
                 conf['target_file_name'] = opt[1]
-        if [opt[0] == '--generate_header']:
+        if opt[0] == '--generate_header':
             conf['gen_header'] = True
 
     return conf
@@ -90,6 +90,10 @@ def main():
     run_config = opt_parse(optargs[0], optargs[1])
 
     verbose = run_config['verbose']
+
+    if verbose:
+        print ('Running with config')
+        print (run_config)
 
     if verbose:
         print ("Source files: " + str(run_config['source_files']))
