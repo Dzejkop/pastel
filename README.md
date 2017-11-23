@@ -1,42 +1,37 @@
-# C++ - using python to compile files into executables
+# PaSTeL - Python Static daTa Linker
 
-## Spoiler alert
-![Funny image saying "it was absolutely useless. Thanks"](http://i.imgur.com/cL3cnbr.png)
-
-But I did for fun anyways ¯\\\_(ツ)\_/¯
+**Now with 100% more Windows support**
 
 ## What is it and how does it work?
-The `parse.py` is a simple python script which parses a .cpp (doesn't actually have to be a .cpp file, but it should be for compilation reasons) file (first argument) and looks for macros such as this one: `COMPILE_IN_DATA_FILE(var_name, "path_to_file");`, it extracts the `var_name` and `path_to_file`. The script will then read the contents of every `path_to_file` file and encode it as a byte array in a .s file (name specified by the second argument).
+`PaSTeL` allows you statically compile files into your binary.
+My 3 main goals are for `PaSTeL` to be:
+* Easy to use
+* Platform independent
+* Easy to integrate into your build system
 
-You, the user, can then compile both files together and voilà - static linking of random files.
-
-**Now.**
-
-You may ask:
-
-**ＷＨＹ　ＷＯＵＬＤ　ＡＮＹＯＮＥ　ＤＯ　ＴＨＩＳ？**
-
-To which I say:
-
-![](http://media.giphy.com/media/K6VhXtbgCXqQU/giphy.gif)
-
-# How do I use it?
-
-Be warned it's: **only tested on Linux**
+## Features
+- [x] Static linking of files on Linux
+- [x] Platform independent linking (**untested on OSX**)
+- [x] Command line arguments
+- [x] Support for multiple source files
+- [ ] Extensible configuration
+- [x] Easy integration into Makefile
+- [ ] Easy integration into CMake
+- [ ] Easy integration with Visual Studio
+- [ ] Namespaces support
 
 ## Requirements
 1. Python3
-1. g++
 
 ## Usage
-1. Run `python3 parse.py src.cpp asm.s` command where `src.cpp` is your cpp source file, and `asm.s` will be a generated assembly file.
-1. Compile the original and generated files together.
-1. Preferably remove the generated files.
+Basic:
+`python <path_to_pastel.py> -s <src_file_1> -s <src_file_2> -t target_file`
 
-## Exmplae usage (in the Example directory)
-```
-> python3 ../Src/parse.py source.cpp temp.s
-> g++ temp.s source.cpp -o O
-> rm temp.s
-> ./O
-```
+Additional options:
+
+* `--verbose` verbose
+
+* `--generate_header` generates the pastel.h
+
+## Examples
+* [Makefile 1](/example)
